@@ -36,7 +36,7 @@ export const getStatement = async (req, res) => {
 // function to get update case status
 export const updateStatementStatus = async (req, res) => {
    try {
-     const status = req.params.caseStatus;
+     const status = req.body.caseStatus;
      console.log("request", status);
      const addData = await StatementModel.findByIdAndUpdate(req.params.id, {caseStatus: status})
      res.status(200).send(addData);
